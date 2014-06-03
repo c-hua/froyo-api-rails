@@ -6,6 +6,14 @@
 
 <div x-ng-app="yogurt-app">
 	<div x-ng-controller="YogurtCtrl">
-		{{yogurts}}
+
+		<input ng-model="searchYogurt" type="text"><br>
+	
+
+		<ul class="group-list">
+			<li ng-repeat="yogurt in yogurts | filter:searchYogurt" class="group-item-list">
+				{{ yogurt.flavor}}
+			</li>
+		</ul>
 	</div>
 </div>
